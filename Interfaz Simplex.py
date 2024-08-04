@@ -1,5 +1,5 @@
 import tkinter as tk
-import customtkinter
+import customtkinter 
 
 global xboton
 global numeroVariable
