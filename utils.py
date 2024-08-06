@@ -24,3 +24,18 @@ def save_solution(solution, iterations):
         f.write("Solución Óptima: " + str(solution['optimal_value']) + "\n")
         for var, value in solution['variables'].items():
             f.write(f"{var} = {value}\n")
+        f.write(f"\nNúmero de Iteraciones: {iterations}\n\n")
+        
+        for i, interaction in enumerate(interactions):
+            f.write(f"Iteración {i + 1}:\n")
+            f.write(f"  Pivote: {interaction['pivot']}\n")
+            f.write(f"  Variable que entra: {interaction['entering_var']}\n")
+            f.write(f"  Variable que sale: {interaction['leaving_var']}\n")
+            f.write("\n")
+
+def save_interaction(interactions, pivot, entering_var, leaving_var):
+    interactions.append({
+        'pivot': pivot,
+        'entering_var': entering_var,
+        'leaving_var': leaving_var
+    })
